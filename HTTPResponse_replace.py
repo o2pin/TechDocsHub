@@ -74,7 +74,7 @@ http.client.HTTPResponse._read_status = _read_status
 context = ssl.create_default_context()
 context.check_hostname = False
 context.verify_mode = ssl.CERT_NONE
-conn = http.client.HTTPSConnection('23.100.37.205', context=context)
+conn = http.client.HTTPSConnection('Your IP Addess', context=context)
 
 # 发送GET请求
 conn.request('GET', '/')
@@ -83,6 +83,8 @@ conn.request('GET', '/')
 resp = conn.getresponse()
 
 content = resp.read().decode('utf-8')
+
+# 接下来想做什么都行
 print(f'Status: {resp.status}')
 print(f'Reason: {resp.reason}')
 print(f'Version: {resp.version}')
